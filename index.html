@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="font-poppins">
+    <!-- SECTION OF LOGO, NAVBAR AND HERO-->
+    <header class="header-style-custom">
+        <div
+            class="header-container md:max-w-93% lg:max-w-4xl xl:max-w-1192px flex flex-col justify-center m-auto md:relative">
+            <!-- Header Top: Logo + Nav + Btns -->
+            <div class="header-section-1 flex md:justify-between lg:justify-center items-center md:relative">
+                <div class="header-navigation md:mt-6 lg:mt-8">
+                    <section class="header-navigation-inner flex items-center">
+                        <!-- Container for Logo-->
+                        <div class="top-logo flex md:items-start lg:items-center lg:mr-44 xl:mr-216px">
+                            <span
+                                class="logo-sign bg-green flex items-center justify-center rounded-full md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 md:text-lg lg:text-xl xl:text-2xl text-white font-extrabold mr-2">M</span>
+                            <p class="logo-text md:text-lg lg:text-xl xl:text-2xl text-theme-green font-medium">Mulih
+                            </p>
+                        </div>
+                        <!-- Container for the Navigation-->
+                        <div class="hidden lg:block">
+                            <nav aria-label="Main navigation">
+                                <ul class="md:flex md:items-center">
+                                    <li id="home-menu" class="menu-item lg:text-base xl:text-lg lg:mr-6 xl:mr-12"><a
+                                            href="#">Home</a>
+                                    </li>
+                                    <li class="menu-item menu-style lg:text-base xl:text-lg lg:mr-6 xl:mr-12"><a
+                                            href="#">Property</a></li>
+                                    <li class="menu-item menu-style lg:text-base xl:text-lg lg:mr-6 xl:mr-12"><a
+                                            href="#">About</a>
+                                    </li>
+                                    <li class="menu-item menu-style lg:text-base xl:text-lg lg:mr-6 xl:mr-12"><a
+                                            href="#">Service</a></li>
+                                    <li class="menu-item menu-style lg:text-base xl:text-lg"><a href="#">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Container for the Btns-->
+                        <div
+                            class="hidden sm:hidden md:hidden lg:block sm:flex sm:flex-col lg:flex-row sm:items-center mr-auto">
+                            <button class="signin-style lg:text-sm xl:text-base lg:px-4 lg:py-3 xl:px-12 xl:py-4"
+                                aria-label="Signin to your account">Sign
+                                in</button>
+                            <button class="signup-style lg:text-sm xl:text-base lg:px-6 lg:py-3 xl:px-10 xl:py-4"
+                                aria-label="Signup for an account">Sign
+                                Up</button>
+                        </div>
+                        <div class="mobile-menu absolute top-6 right-1">
+                            <div class="mobile-menu-container lg:hidden" id="container">
+                                <div class="menu-icon" id="menu-icon">
+                                    <div id="icon-custom-margin"></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- <div class="mobile-menu absolute top-6 right-1">
+                        <div class="mobile-menu-container lg:hidden" id="container">
+                            <div class="menu-icon" id="menu-icon">
+                                <div id="icon-custom-margin"></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="background-overlay" id="background-overlay"></div>
+                    <div class="overlay lg:hidden flex flex-col items-center" id="overlay">
+                        <div class="close-btn" id="close-btn">&times;</div>
+                        <div>
+                            <div class="menu-items">
+                                <a href="#">Home</a>
+                                <a href="#">Property</a>
+                                <a href="#">About</a>
+                                <a href="#">Service</a>
+                                <a href="#">Contact</a>
+                                <button class="signin-style text-base m-0" aria-label="Signin to your account">Sign
+                                    in</button>
+                                <button class="signup-style lg:text-sm xl:text-base lg:px-6 lg:py-3 xl:px-10 xl:py-4"
+                                    aria-label="Signup for an account">Sign
+                                    Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Mid: Text Area -->
+            <div class="header-mid-text w-50.8% mt-65px">
+                <span class="section-name-style md:w-28 md:h-9 lg:w-32 lg:h-10 xl:w-162px xl:h-50px mb-8">
+                    <h3 class="font-medium text-ocean-green md:text-sm lg:text-base xl:text-lg">REAL
+                        ESTATE</h3>
+                </span>
+                <h1
+                    class="header-title font-rubik font-semibold md:text-4xl lg:text-5xl xl:text-64px text-deep-navy xl:tracking-0.25px xl:leading-74px mb-6">
+                    Let's
+                    hunt for your dream residence</h1>
+                <p class="header-description md:text-xs lg:text-sm xl:text-base xl:leading-6 text-grayish-blue w-11/12">
+                    Explore our range of
+                    beautiful
+                    properties with
+                    the
+                    addition of separate accommodation suitable for
+                    you.
+                </p>
+            </div>
+        </div>
+    </header>
+    <!-- Search Box Filter -->
+    <div class="search-filter">
+        <div class="lg:h-150px xl:h-124px flex flex-col items-start justify-start search-box-custom-style">
+            <div class="filter-option-btns flex items-center justify-start">
+                <button
+                    class="bg-gray-shade text-dark-gray w-14 lg:w-20 xl:w-109px h-9 lg:h-12 xl:h-14 font-medium md:text-base lg:text-xl xl:text-2xl tracking-0.25px xl:leading-8 buy-btn">Buy</button>
+                <button
+                    class="bg-gray-shade text-dark-gray w-14 lg:w-20 xl:w-109px h-9 lg:h-12 xl:h-14 font-medium md:text-base lg:text-xl xl:text-2xl tracking-0.25px xl:leading-8 rent-btn">Rent</button>
+            </div>
+            <div
+                class="filter-main-body bg-blue-hint-white flex items-center justify-center m-auto p-6 lg:p-6 xl:p-8 arrow-style-shadow">
+                <form class="filter-form-style flex items-center justify-center">
+                    <div class="location-style">
+                        <label for="location"
+                            class="location-label md:text-sm lg:text-base xl:text-lg text-deep-navy tracking-0.25px xl:leading-26px">Location</label>
+                        <div
+                            class="md:text-xs lg:text-sm xl:text-base text-dark-gray tracking-0.25px xl:leading-26px bg-white dropdown">
+                            <input class="location-input md:w-56 lg:w-64 xl:w-72 md:text-sm lg:text-base xl:text-lg"
+                                id="location" type="text" name="location" placeholder="Type a location...">
+                            <div id="dropdown-content" class="dropdown-content"></div>
+                        </div>
+                    </div>
+                    <div class="property-dropdown ml-4 lg:ml-7">
+                        <label for="property-type"
+                            class="property-label md:text-sm lg:text-base xl:text-lg text-deep-navy tracking-0.25px xl:leading-26px">Type</label>
+                        <div class="flex items-center type-show">
+                            <div
+                                class="property-dropdown-selected md:text-sm lg:text-base xl:text-lg text-dark-gray tracking-0.25px xl:leading-26px">
+                                Residential
+                            </div>
+                            <img class="cursor-pointer ml-1" src="/img/Arrow - Down 2.svg" alt="">
+                        </div>
+                        <div
+                            class="property-dropdown-content md:text-xs lg:text-sm xl:text-base text-dark-gray tracking-0.25px xl:leading-26px">
+                            <div class="property-value" data-value="residential">Residential</div>
+                            <div class="property-value" data-value="commercial">Commercial</div>
+                            <div class="property-value" data-value="industrial">Industrial</div>
+                            <div class="property-value" data-value="land">Land</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="property-type" name="property-type" value="residential">
+
+                    <div class="price-dropdown ml-4 lg:ml-5">
+                        <label for="price-range"
+                            class="price-label md:text-sm lg:text-base xl:text-lg text-deep-navy tracking-0.25px xl:leading-26px">Price
+                            Range</label>
+                        <div class="flex items-center price-show">
+                            <div
+                                class="flex items-center price-dropdown-selected md:text-sm lg:text-base xl:text-lg text-dark-gray tracking-0.25px xl:leading-26px">
+                            </div>
+                        </div>
+                        <div name="price-range-options"
+                            class="price-dropdown-content md:text-xs lg:text-sm xl:text-base text-dark-gray tracking-0.25px xl:leading-26px bg-white">
+                            <div class="price" id="default-price" data-value="50000-200000">$50,000 - $200,000
+                            </div>
+                            <div class="price" data-value="200000-500000">$200,000 - $500,000</div>
+                            <div class="price" data-value="500000-1000000">$500,000 - $1,000,000</div>
+                            <div class="price" data-value="1000000-5000000">$1,000,000 - $5,000,000</div>
+                            <div class="price" data-value="5000000-10000000">$5,000,000 - $10,000,000</div>
+                            <div class="price" data-value="10000000">$10,000,000+</div>
+                        </div>
+                    </div>
+                    <button
+                        class="search-submit-btn bg-ocean-green font-medium md:text-xs lg:text-sm xl:text-base text-white tracking-0.25px xl:leading-24px md:px-5 md:py-3 px-6 py-1 lg:px-10 lg:py-4 xl:px-47.52px xl:py-18.08px lg:ml-2 xl:ml-5 lg:search-btn-shadow search-btn-hover"
+                        type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION OF 'BEST RECOMMENDATIONS' -->
+    <div class="common-W-P">
+        <div class="inner-common-W-M md:relative">
+            <div class="category-intro-text mb-12">
+                <!-- Section Name -->
+                <span class="section-name-style md:w-28 md:h-9 lg:w-28 xl:w-142px xl:h-50px mb-4">
+                    <h3 class="font-medium text-ocean-green md:text-sm lg:text-base xl:text-lg">DISCOVER</h3>
+                </span>
+                <!-- Text Area + Btn -->
+                <div class="category-intro flex items-center justify-between">
+                    <div class="flex flex-col items-start justify-center">
+                        <H2
+                            class="category-title font-rubik md:text-3xl lg:text-4xl xl:text-5xl text-teal-blue font-semibold xl:tracking-0.5px">
+                            Best recommendations</H2>
+                        <p
+                            class="category-p md:text-xs lg:text-sm xl:text-base xl:leading-26px text-grayish-blue tracking-0.25px mt-4">
+                            Explore
+                            our range
+                            of beautiful
+                            properties with
+                            the
+                            addition of separate accommodation suitable for
+                            you.
+                        </p>
+                    </div>
+
+                    <button
+                        class="learn-more-btn flex items-center text-ocean-green md:text-sm md:w-32 lg:w-40 lg:text-base xl:text-lg font-medium tracking-0.5px xl:leading-26px">Learn
+                        More <span class="ml-2 arrow-style"><img class="arrow-style" src="img/Arrow - Right Circle.png"
+                                alt="Learn More"></span></button>
+                </div>
+            </div>
+
+            <!-- Featured Listings -->
+
+            <div class="listing-container flex items-center justify-center">
+                <button class="slide-button left-reccommendation-slide"><img src="img/left arrow.svg"
+                        alt="Previous Reccommendation"></button>
+                <div class="listing-container-inner flex items-center md:w-95% overflow-hidden md:mx-8">
+                    <div class="featured-listing-item-style first-list-custom-ml xl:ml-4">
+                        <img src="img/Rectangle 227.png" alt="property 1">
+                        <h3
+                            class="listing-h3-custom xl:text-2xl xl:leading-8 font-semibold text-deep-navy tracking-0.25px">
+                            Perum griya
+                            asri
+                        </h3>
+                        <p class="listing-location xl:text-base text-dark-gray xl:leading-26px tracking-0.25px">
+                            Bogor, Jawa
+                            Barat</p>
+                        <div class="flex items-center price-custom-margin">
+                            <span
+                                class="price-text font-semibold xl:text-2xl tracking-0.25px xl:leading-8 text-ocean-green">$25,000</span>
+                            <div
+                                class="property-size bg-gray-shade xl:w-44 xl:ml-8 xl:p-2 flex items-center justify-center">
+                                <span
+                                    class="property-size-info xl:leading-6 tracking-0.25px text-deep-navy text-nowrap">360<sup>m²</sup>
+                                    <span class="text-dark-gray">Living Area</span></span>
+                            </div>
+                        </div>
+                        <div class="listing-btn-container flex items-center justify-center">
+                            <button
+                                class="listing-btn xl:w-310.7px xl:h-12 border border-ocean-green flex items-center justify-center xl:mt-6 xl:text-base text-ocean-green font-medium tracking-[0.25%] hover:bg-ocean-green hover:text-white">
+                                Send Inquiry
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="featured-listing-item-style listing-custom-ml xl:ml-8">
+                        <img src="img/Rectangle 227.png" alt="property 1">
+                        <h3
+                            class="listing-h3-custom xl:text-2xl xl:leading-8 font-semibold text-deep-navy tracking-0.25px">
+                            Perum griya
+                            asri
+                        </h3>
+                        <p class="listing-location xl:text-base text-dark-gray xl:-26px tracking-0.25px">
+                            Bogor, Jawa
+                            Barat</p>
+                        <div class="flex items-center price-custom-margin">
+                            <span
+                                class="price-text font-semibold xl:text-2xl tracking-0.25px xl:leading-8 text-ocean-green">$25,000</span>
+                            <div
+                                class="property-size bg-gray-shade xl:w-44 xl:ml-8 xl:p-2 flex items-center justify-center">
+                                <span
+                                    class="property-size-info xl:leading-6 tracking-0.25px text-deep-navy text-nowrap">360<sup>m²</sup>
+                                    <span class="text-dark-gray">Living Area</span></span>
+                            </div>
+                        </div>
+                        <div class="listing-btn-container flex items-center justify-center">
+                            <button
+                                class="listing-btn xl:w-310.7px xl:h-12 border border-ocean-green flex items-center justify-center xl:mt-6 xl:text-base text-ocean-green font-medium tracking-[0.25%] hover:bg-ocean-green hover:text-white">
+                                Send Inquiry
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="featured-listing-item-style listing-custom-ml xl:ml-8">
+                        <img src="img/Rectangle 227.png" alt="property 1">
+                        <h3
+                            class="listing-h3-custom xl:text-2xl xl:leading-8 font-semibold text-deep-navy tracking-0.25px">
+                            Perum griya
+                            asri
+                        </h3>
+                        <p class="listing-location xl:text-base text-dark-gray xl:leading-26px tracking-0.25px">
+                            Bogor, Jawa
+                            Barat</p>
+                        <div class="flex items-center price-custom-margin">
+                            <span
+                                class="price-text font-semibold xl:text-2xl tracking-0.25px xl:leading-8 text-ocean-green">$25,000</span>
+                            <div
+                                class="property-size bg-gray-shade xl:w-44 xl:ml-8 xl:p-2 flex items-center justify-center">
+                                <span
+                                    class="property-size-info xl:leading-6 tracking-0.25px text-deep-navy text-nowrap">360<sup>m²</sup>
+                                    <span class="text-dark-gray">Living Area</span></span>
+                            </div>
+                        </div>
+                        <div class="listing-btn-container flex items-center justify-center">
+                            <button
+                                class="listing-btn xl:w-310.7px xl:h-12 border border-ocean-green flex items-center justify-center xl:mt-6 xl:text-base text-ocean-green font-medium tracking-[0.25%] hover:bg-ocean-green hover:text-white">
+                                Send Inquiry
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="featured-listing-item-style listing-custom-ml xl:ml-8">
+                        <img src="img/Rectangle 227.png" alt="property 1">
+                        <h3
+                            class="listing-h3-custom xl:text-2xl xl:leading-8 font-semibold text-deep-navy tracking-0.25px">
+                            Perum griya
+                            asri
+                        </h3>
+                        <p class="listing-location xl:text-base text-dark-gray xl:leading-26px tracking-0.25px">
+                            Bogor, Jawa
+                            Barat</p>
+                        <div class="flex items-center price-custom-margin">
+                            <span
+                                class="price-text font-semibold xl:text-2xl tracking-0.25px xl:leading-8 text-ocean-green">$25,000</span>
+                            <div
+                                class="property-size bg-gray-shade xl:w-44 xl:ml-8 xl:p-2 flex items-center justify-center">
+                                <span
+                                    class="property-size-info xl:leading-6 tracking-0.25px text-deep-navy text-nowrap">360<sup>m²</sup>
+                                    <span class="text-dark-gray">Living Area</span></span>
+                            </div>
+                        </div>
+                        <div class="listing-btn-container flex items-center justify-center">
+                            <button
+                                class="listing-btn xl:w-310.7px xl:h-12 border border-ocean-green flex items-center justify-center xl:mt-6 xl:text-base text-ocean-green font-medium tracking-[0.25%] hover:bg-ocean-green hover:text-white">
+                                Send Inquiry
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="featured-listing-item-style listing-custom-ml xl:ml-8">
+                        <img src="img/Rectangle 227.png" alt="property 1">
+                        <h3 class="listing-h3-custom xl:text-2xl xl:-8 font-semibold text-deep-navy tracking-0.25px">
+                            Perum griya
+                            asri
+                        </h3>
+                        <p class="listing-location xl:text-base text-dark-gray xl:leading-26px tracking-0.25px">
+                            Bogor, Jawa
+                            Barat</p>
+                        <div class="flex items-center price-custom-margin">
+                            <span
+                                class="price-text font-semibold xl:text-2xl tracking-0.25px xl:leading-8 text-ocean-green">$25,000</span>
+                            <div
+                                class="property-size bg-gray-shade xl:w-44 xl:ml-8 xl:p-2 flex items-center justify-center">
+                                <span
+                                    class="property-size-info xl:leading-6 tracking-0.25px text-deep-navy text-nowrap">360<sup>m²</sup>
+                                    <span class="text-dark-gray">Living Area</span></span>
+                            </div>
+                        </div>
+                        <div class="listing-btn-container flex items-center justify-center">
+                            <button
+                                class="listing-btn xl:w-310.7px xl:h-12 border border-ocean-green flex items-center justify-center xl:mt-6 xl:text-base text-ocean-green font-medium tracking-[0.25%] hover:bg-ocean-green hover:text-white">
+                                Send Inquiry
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="featured-listing-item-style listing-custom-ml xl:ml-8">
+                        <img src="img/Rectangle 227.png" alt="property 1">
+                        <h3
+                            class="listing-h3-custom xl:text-2xl xl:leading-8 font-semibold text-deep-navy tracking-0.25px">
+                            Perum griya
+                            asri
+                        </h3>
+                        <p class="listing-location xl:text-base text-dark-gray xl:leading-26px tracking-0.25px">
+                            Bogor, Jawa
+                            Barat</p>
+                        <div class="flex items-center price-custom-margin">
+                            <span
+                                class="price-text font-semibold xl:text-2xl tracking-0.25px xl:leading-8 text-ocean-green">$25,000</span>
+                            <div
+                                class="property-size bg-gray-shade xl:w-44 xl:ml-8 xl:p-2 flex items-center justify-center">
+                                <span
+                                    class="property-size-info xl:leading-6 tracking-0.25px text-deep-navy text-nowrap">360<sup>m²</sup>
+                                    <span class="text-dark-gray">Living Area</span></span>
+                            </div>
+                        </div>
+                        <div class="listing-btn-container flex items-center justify-center">
+                            <button
+                                class="listing-btn xl:w-310.7px xl:h-12 border border-ocean-green flex items-center justify-center xl:mt-6 xl:text-base text-ocean-green font-medium tracking-[0.25%] hover:bg-ocean-green hover:text-white">
+                                Send Inquiry
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="slide-button right-reccommendation-slide"><img src="img/right arrow.svg"
+                        alt="Next Reccommendation"></button>
+            </div>
+
+        </div>
+        <div class="dots-container reccommendations-dots">
+        </div>
+    </div>
+
+    <!-- SECTION OF OUR STRENGTHS -->
+    <div class="strength-style md:w-full md:h-[750px] lg:h-[890px] xl:h-[930px] bg-gray-shade md:py-72px py-20">
+        <div
+            class="inner-strength-style flex flex-col justify-center md:max-w-93% lg:max-w-4xl xl:max-w-1192px mx-auto">
+            <!-- Section and Heading-->
+            <span class="section-name-style discover md:w-36 md:h-9 lg:w-40 xl:w-211.5px xl:h-50px mb-4">
+                <h3 class="font-medium text-ocean-green md:text-sm lg:text-base xl:text-lg">OUR STRENGTHS</h3>
+            </span>
+            <H2
+                class="strength-h2-mobile font-rubik md:text-3xl lg:text-4xl xl:text-5xl text-teal-blue font-semibold tracking-0.5px xl:leading-56px w-436px">
+                Giving you peace of mind</H2>
+            <!-- Strength items -->
+            <div class="strength-items-container flex items-center justify-center mt-12">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="strength-items grid grid-cols-3">
+                        <div class="strength-item-mobile-padding p-5">
+                            <img class="strength-icon" src="img/Heart.svg" alt="Comfortable">
+                            <h3 class="our-strengths-h3-style">Comfortable</h3>
+                            <p
+                                class="strength-item-p min-w-52 md:text-xs lg:text-sm xl:text-base text-grayish-blue tracking-wide xl:leading-26px">
+                                Enjoy
+                                lifestyle amenities
+                                designed to
+                                provide
+                                every
+                                homeowners modern comfort, a stone's throw away
+                                from schools, churches, and hospitals.</p>
+                        </div>
+                        <div class="strength-item-mobile-padding p-5">
+                            <img class="strength-icon" src="img/Shield Done.svg" alt="Extra security">
+                            <h3 class="our-strengths-h3-style">Extra security</h3>
+                            <p
+                                class="strength-item-p max-w-[800px] max-w-test md:text-xs lg:text-sm xl:text-base text-grayish-blue tracking-wide xl:leading-26px">
+                                You can
+                                connect with
+                                potential tenants
+                                without having to share your phone number. We also require all users to register to
+                                validate their legitimacy.</p>
+                        </div>
+                        <div class="strength-item-mobile-padding p-5">
+                            <img class="strength-icon" src="img/Star.svg" alt="Luxury">
+                            <h3 class="our-strengths-h3-style">Luxury</h3>
+                            <p
+                                class="strength-item-p min-w-52 md:text-xs lg:text-sm xl:text-base text-grayish-blue tracking-wide xl:leading-26px">
+                                Find out how
+                                we provide
+                                the
+                                highest
+                                standard of professional property management to give you all the benefits of property.
+                            </p>
+                        </div>
+                        <div class="strength-item-mobile-padding p-5">
+                            <img class="strength-icon" src="img/Ticket Star.svg" alt="Best price">
+                            <h3 class="our-strengths-h3-style">Best price</h3>
+                            <p
+                                class="strength-item-p min-w-52 md:text-xs lg:text-sm xl:text-base text-grayish-blue tracking-wide xl:leading-26px">
+                                Not sure
+                                what you should
+                                be
+                                charging
+                                for your property? Let us do the numbers for you—contact us today for a free rental
+                                appraisal on your home.</p>
+                        </div>
+                        <div class="strength-item-mobile-padding p-5">
+                            <img class="strength-icon" src="img/Location.svg" alt="Strategic location">
+                            <h3 class="our-strengths-h3-style">Strategic location</h3>
+                            <p
+                                class="strength-item-p min-w-52 md:text-xs lg:text-sm xl:text-base text-grayish-blue tracking-wide xl:leading-26px">
+                                located in
+                                the city center
+                                close to the
+                                shopping center. Very good for areas surrounded by international education centers,
+                                start-up office centers.</p>
+                        </div>
+                        <div class="strength-item-mobile-padding p-5">
+                            <img class="strength-icon" src="img/Graph.svg" alt="Efficient">
+                            <h3 class="our-strengths-h3-style">Efficient</h3>
+                            <p
+                                class="strength-item-p min-w-52 md:text-xs lg:text-sm xl:text-base text-grayish-blue tracking-wide xl:leading-26px">
+                                Schedule
+                                visits to
+                                multiple
+                                properties
+                                at once in one day without having to call them one by one. Check everything and find the
+                                best properties for rent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT US SECTION -->
+    <div class="about-us-W-P">
+        <div class="inner-common-W-M">
+            <div class="about-container flex items-center justify-center md:flex-col xl:flex-row">
+                <!--Portfolio -->
+                <div class="relative inline-block basis-1/2">
+                    <!-- BG Image -->
+                    <img class="block" src="img/property.png" alt="property">
+                    <!-- 5 Star Reviews -->
+                    <div
+                        class="five-stars-card bg-blue-hint-white flex flex-col items-center justify-start md:w-40 xl:w-174px md:h-56 xl:h-252px absolute md:left-20 xl:left-24 -top-24 overlay-shadow">
+                        <img class="tick-img mt-1 mb-4" src="img/Tick Square.png" alt="Tick">
+                        <h2
+                            class="five-stars-h2 md:text-5xl xl:text-7xl xl:leading-80px tracking-0.25px text-teal-blue mb-2">
+                            4.8</h2>
+                        <div class="flex items-center justify-center mb-4">
+                            <img class="star" src="img/star.png" alt="star">
+                            <img class="star ml-1" src="img/star.png" alt="star">
+                            <img class="star ml-1" src="img/star.png" alt="star">
+                            <img class="star ml-1" src="img/star.png" alt="star">
+                            <img class="star ml-1" src="img/star.png" alt="star">
+                        </div>
+                        <span
+                            class="trusted-text md:text-sm xl:text-base xl:leading-6 tracking-0.25px text-dark-gray mb-2px">Trusted
+                            on</span>
+                        <span
+                            class="reviews-note md:text-sm xl:text-base xl:leading-6 tracking-0.25px text-teal-blue">500+
+                            Reviews</span>
+                    </div>
+                    <!-- Image Bottom Right Success Stats  -->
+                    <div
+                        class="success-stats bg-blue-hint-white flex items-center justify-center w-515px h-82px absolute bottom-0 right-0 drop-shadow-xl overlay-shadow">
+                        <div class="property-stats flex items-center justify-center mr-8">
+                            <h2
+                                class="success-stats-h2 md:text-4xl xl:text-5xl text-teal-blue font-semibold tracking-0.25px xl:leading-58px mr-2">
+                                250+
+                            </h2>
+                            <div class="flex flex-col items-start justify-center">
+                                <span
+                                    class="asset-converted md:text-sm xl:text-base tracking-0.25px xl:leading-26px text-dark-gray">Properties</span>
+                                <span
+                                    class="asset-converted md:text-sm xl:text-base tracking-0.25px xl:leading-26px text-dark-gray">sold</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <h2
+                                class="success-stats-h2 md:text-4xl xl:text-5xl text-teal-blue font-semibold tracking-0.25px xl:leading-58px mr-2">
+                                550+
+                            </h2>
+                            <div class="flex flex-col items-start justify-center">
+                                <span
+                                    class="asset-converted md:text-sm xl:text-base tracking-0.25px xl:leading-26px text-dark-gray">Apartments</span>
+                                <span
+                                    class="asset-converted md:text-sm xl:text-base tracking-0.25px xl:leading-26px text-dark-gray">rented</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text and Btn -->
+                <div class="about-text-btn mb-12 basis-1/2 xl:ml-14 md:mt-8">
+                    <span class="section-name-style md:w-28 md:h-9 lg:w-32 xl:w-141px lg:h-11 xl:h-50px mb-4">
+                        <h3 class="font-medium text-ocean-green md:text-sm lg:text-base xl:text-lg">ABOUT US</h3>
+                    </span>
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-col items-start justify-center">
+                            <H2
+                                class="about-us-h2 font-rubik md:text-3xl lg:text-4xl xl:text-5xl text-teal-blue font-semibold xl:tracking-0.5px xl:leading-56px">
+                                How much is your property worth now?</H2>
+                            <p
+                                class="about-us-p md:text-xs lg:text-sm xl:text-base xl:leading-26px text-grayish-blue tracking-0.25px mt-4">
+                                We
+                                have
+                                built
+                                our
+                                reputation as true local area experts. We have gained more knowledge about buyer
+                                interests,
+                                our
+                                neighborhood and the market than any other brand because we live locally and work for
+                                local
+                                people.
+                            </p>
+                            <button class="learn-more-btn-custom" aria-label="learn more about us">Learn more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION OF CUSTOMER TESTIMONIALS -->
+    <div class="common-W-P mobile-W-P">
+        <div class="inner-common-W-M relative">
+            <!-- Section Name + Heading + Btn -->
+            <div class="category-intro-text mb-12">
+                <span class="section-name-style customers-reveiws md:w-52 md:h-9 lg:w-60 xl:w-274px xl:h-50px mb-4">
+                    <h3 class="font-medium text-ocean-green md:text-sm lg:text-base xl:text-lg">CUSTOMER TESTIMONIALS
+                    </h3>
+                </span>
+                <div class="category-intro flex items-center justify-between">
+                    <H2
+                        class="category-title font-rubik md:text-3xl lg:text-4xl xl:text-5xl text-teal-blue font-semibold tracking-0.5px xl:leading-56px">
+                        People say about us?</H2>
+                    <button
+                        class="learn-more-btn flex items-center text-ocean-green md:text-sm lg:text-base xl:text-lg font-medium tracking-0.5px xl:leading-26px">Learn
+                        More <span class="ml-2 arrow-style"><img class="arrow-style" src="img/Arrow - Right Circle.png"
+                                alt="Learn More"></span></button>
+                </div>
+
+            </div>
+            <!-- Testimonials -->
+            <div class="testimonial-container flex items-center justify-center">
+                <button class="slide-button left-testimonial-slide"><img src="img/left arrow.svg"
+                        alt="previousTestimonials"></button>
+                <div class="testimonial-inner-container flex md:w-95% overflow-hidden md:mx-8">
+                    <div class="testimonial-item-style first-testimonial-custom-ml xl:ml-4">
+                        <img class="blockquote" src="img/“.png" alt="blockquote">
+                        <h3
+                            class="testimonial-title md:text-sm xl:text-base text-deep-navy font-semibold tracking-0.5px xl:leading-28px mt-6">
+                            It proved to
+                            be
+                            exactly
+                            the
+                            kind of
+                            home we wanted.</h3>
+                        <p
+                            class="testimonial-description md:text-xs xl:text-sm text-deep-navy tracking-0.5px xl:leading-6 mt-4">
+                            We
+                            wish to express
+                            our thanks
+                            for
+                            your
+                            hard work
+                            in finding us a temporary home, which proved to be exactly
+                            what we wanted.</p>
+                        <div class="user-details-container flex items-center mt-6">
+                            <img class="user-img" src="img/Jaydon Aminoff.png" alt="Jaydon Aminoff">
+                            <div class="flex flex-col items-start ml-14px">
+                                <h4
+                                    class="user-name font-nunito font-semibold lg:text-sm xl:text-base text-rich-green mb-1 xl:leading-26px tracking-0.5px">
+                                    Jaydon
+                                    Aminoff</h4>
+                                <span
+                                    class="user-profession font-nunito lg:text-xs text-mid-gray tracking-0.5px xl:leading-22px">UX
+                                    Designer</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="testimonial-item-style testimonial-custom-ml xl:ml-8">
+                        <img class="blockquote" src="img/“.png" alt="blockquote">
+                        <h3
+                            class="testimonial-title md:text-sm xl:text-base text-deep-navy font-semibold tracking-0.5px xl:leading-28px mt-6">
+                            Nobody knows
+                            Portland and the peninsula better than David.</h3>
+                        <p
+                            class=" testimonial-description md:text-xs xl:text-sm text-deep-navy tracking-0.5px xl:leading-6 mt-4">
+                            My wife and I had
+                            a dream of
+                            downsizing from our house in Cape Elizabeth into a small condo closer to where we work and
+                            play
+                            in Portland. </p>
+                        <div class="user-details-container flex items-center mt-6">
+                            <img class="user-img" src="img/Alfredo Donin.png" alt="Alfredo Donin">
+                            <div class="flex flex-col items-start ml-14px">
+                                <h4
+                                    class="user-name font-nunito font-semibold lg:text-sm xl:text-base text-rich-green mb-1 xl:leading-26px tracking-0.5px">
+                                    Alfredo Donin</h4>
+                                <span
+                                    class="user-profession font-nunito lg:text-xs text-mid-gray tracking-0.5px xl:leading-22px">UI
+                                    Designer</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="testimonial-item-style testimonial-custom-ml xl:ml-8">
+                        <img class="blockquote" src="img/“.png" alt="blockquote">
+                        <h3
+                            class="testimonial-title md:text-sm xl:text-base text-deep-navy font-semibold tracking-0.5px xl:leading-28px mt-6">
+                            He keeps his
+                            client’s best interests in sharp focus</h3>
+                        <p
+                            class="testimonial-description md:text-xs xl:text-sm text-deep-navy tracking-0.5px xl:leading-6 mt-4">
+                            After working with
+                            David to sell
+                            my home in 2013, I was convinced that he’s the only realtor I’ll ever need. Since then, I’ve
+                            bought two properties and sold one.</p>
+                        <div class="user-details-container flex items-center mt-6">
+                            <img class="user-img" src="img/Makenna Korsgaard.png" alt="Jaydon Aminoff">
+                            <div class=" flex flex-col items-start ml-14px">
+                                <h4
+                                    class="user-name font-nunito font-semibold lg:text-sm xl:text-base text-rich-green lg:mb-1 xl:leading-26px tracking-0.5px">
+                                    Makenna Korsgaard</h4>
+                                <span
+                                    class="user-profession font-nunito lg:text-xs text-mid-gray tracking-0.5px xl:leading-22px">UX
+                                    Researcher</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="testimonial-item-style testimonial-custom-ml xl:ml-8">
+                        <img class="blockquote" src="img/“.png" alt="blockquote">
+                        <h3
+                            class="testimonial-title md:text-sm xl:text-base text-deep-navy font-semibold tracking-0.5px xl:leading-28px">
+                            He keeps his
+                            client’s best interests in sharp focus</h3>
+                        <p
+                            class="testimonial-description md:text-xs xl:text-sm text-deep-navy tracking-0.5px xl:leading-6 mt-4">
+                            After working with
+                            David to sell
+                            my home in 2013, I was convinced that he’s the only realtor I’ll ever need. Since then, I’ve
+                            bought two properties and sold one.</p>
+                        <div class="user-details-container flex items-center mt-6">
+                            <img class="user-img" src="img/Makenna Korsgaard.png" alt="Jaydon Aminoff">
+                            <div class=" flex flex-col items-start ml-14px">
+                                <h4
+                                    class="user-name font-nunito font-semibold lg:text-sm xl:text-base text-rich-green lg:mb-1 xl:leading-26px tracking-0.5px">
+                                    Makenna Korsgaard</h4>
+                                <span
+                                    class="user-profession font-nunito lg:text-xs text-mid-gray tracking-0.5px xl:leading-22px">UX
+                                    Researcher</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="testimonial-item-style testimonial-custom-ml xl:ml-8">
+                        <img class="blockquote" src="img/“.png" alt="blockquote">
+                        <h3
+                            class="testimonial-title md:text-sm xl:text-base text-deep-navy font-semibold tracking-0.5px xl:leading-28px mt-6">
+                            He keeps his
+                            client’s best interests in sharp focus</h3>
+                        <p
+                            class="testimonial-description md:text-xs xl:text-sm text-deep-navy tracking-0.5px xl:leading-6 mt-4">
+                            After working with
+                            David to sell
+                            my home in 2013, I was convinced that he’s the only realtor I’ll ever need. Since then, I’ve
+                            bought two properties and sold one.</p>
+                        <div class="user-details-container flex items-center mt-6">
+                            <img class="user-img" src="img/Makenna Korsgaard.png" alt="Jaydon Aminoff">
+                            <div class=" flex flex-col items-start ml-14px">
+                                <h4
+                                    class="user-name font-nunito font-semibold lg:text-sm xl:text-base text-rich-green lg:mb-1 xl:leading-26px tracking-0.5px">
+                                    Makenna Korsgaard</h4>
+                                <span
+                                    class="user-profession font-nunito lg:text-xs text-mid-gray tracking-0.5px xl:leading-22px">UX
+                                    Researcher</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="testimonial-item-style testimonial-custom-ml xl:ml-8">
+                        <img class="blockquote" src="img/“.png" alt="blockquote">
+                        <h3
+                            class="testimonial-title md:text-sm xl:text-base text-deep-navy font-semibold tracking-0.5px xl:leading-28px mt-6">
+                            He keeps his
+                            client’s best interests in sharp focus</h3>
+                        <p
+                            class="testimonial-description md:text-xs xl:text-sm text-deep-navy tracking-0.5px xl:leading-6 mt-4">
+                            After working with
+                            David to sell
+                            my home in 2013, I was convinced that he’s the only realtor I’ll ever need. Since then, I’ve
+                            bought two properties and sold one.</p>
+                        <div class="user-details-container flex items-center mt-6">
+                            <img class="user-img" src="img/Makenna Korsgaard.png" alt="Jaydon Aminoff">
+                            <div class=" flex flex-col items-start ml-14px">
+                                <h4
+                                    class="user-name font-nunito font-semibold lg:text-sm xl:text-base text-rich-green lg:mb-1 xl:leading-26px tracking-0.5px">
+                                    Makenna Korsgaard</h4>
+                                <span
+                                    class="user-profession font-nunito lg:text-xs text-mid-gray tracking-0.5px xl:leading-22px">UX
+                                    Researcher</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="slide-button right-testimonial-slide"><img src="img/right arrow.svg"
+                        alt="nextTestimonials"></button>
+            </div>
+            <div class="dots-container testimonials-dots">
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER SECTION -->
+    <div class="footer-mobile bg-gray-shade w-full md:pt-75px md:pb-100px md:h-393px">
+        <div class="footer-mobile-inner flex md:justify-between md:max-w-[93%] lg:max-w-4xl xl:max-w-1192px mx-auto">
+            <!-- Logo + Text + Subscribe -->
+            <div class="footer-part1 md:w-[258px] lg:w-80 xl:w-351px md:h-218px">
+                <div class="flex items-center mb-4">
+                    <span
+                        class="footer-logo bg-green flex items-center justify-center rounded-full md:w-8 md:h-8 xl:w-9 xl:h-9 md:text-lg lg:text-xl xl:text-2xl text-white font-extrabold mr-2">M</span>
+                    <p class="footer-logo-text lg:text-xl xl:text-2xl text-theme-green font-medium">Mulih</p>
+                </div>
+
+                <p
+                    class="footer-description md:text-xs lg:text-sm xl:text-base text-deep-navy tracking-0.5px xl:leading-6 mb-6">
+                    We have built
+                    our
+                    reputation as true
+                    local area experts.</p>
+
+                <h2 class="font-medium md:text-sm lg:text-lg xl:text-xl xl:leading-28px text-dark-green mb-4">Newsletter
+                </h2>
+                <form class="subscription-form">
+                    <input class="md:text-xs lg:text-sm xl:text-base" id="subscribe" type="email"
+                        placeholder="Enter your email" required>
+                    <button type="submit">Send</button>
+                </form>
+                <span class="email-error md:text-xs lg:text-sm text-red-500"></span>
+                <span class="email-succuss md:text-xs lg:text-sm text-ocean-green"></span>
+            </div>
+            <!-- Menu "Service" -->
+            <div class="service flex flex-col items-start justify-start">
+                <h2
+                    class="service-h2 font-medium md:text-base lg:text-lg xl:text-xl xl:leading-28px text-dark-green mb-4">
+                    Service
+                </h2>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">About us</a>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">Careers</a>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">Terms & Conditions</a>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">Privacy & Policy</a>
+            </div>
+            <!-- Menu "Community" -->
+            <div class="community flex flex-col items-start justify-start">
+                <h2
+                    class="commuity-h2 font-medium md:text-base lg:text-lg xl:text-xl xl:leading-28px text-dark-green mb-4">
+                    Community
+                </h2>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">Find agents</a>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">Lifestyle</a>
+                <a class="footer-menu-item-style hover:text-teal-green" href="">Legal notice</a>
+            </div>
+            <!-- Social -->
+            <div class="social flex flex-col items-start justify-start social-custom-size">
+                <h2
+                    class="followUs-h2 font-medium md:text-base lg:text-lg xl:text-xl xl:leading-28px text-dark-green mb-4">
+                    Follow us
+                    on</h2>
+                <div class="flex items-center justify-center">
+                    <a href=""><img src="img/instagram.png" alt="instagram"></a>
+                    <a href=""><img class="ml-4" src="img/youtube.png" alt="youtube"></a>
+                    <a href=""><img class="ml-4" src="img/facebook.png" alt="facebook"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="module" src="script.js"></script>
+
+</html>
