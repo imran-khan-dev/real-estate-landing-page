@@ -65,7 +65,7 @@ input.addEventListener('input', function () {
 // Search Filter Prices
 export const deafultPrice = document.getElementById("default-price");
 export const priceSelected = document.querySelector('.price-dropdown-selected');
-export const imgHTML = '<img class="cursor-pointer-price ml-1" src="/img/Arrow - Down 2.svg" alt="">';
+export const imgHTML = '<img class="cursor-pointer-price ml-1" src="img/arrow-down.svg" alt="">';
 export let prices = document.querySelectorAll(".price");
 export let originalPrices = Array.from(prices).map(price => price.textContent);
 export let newPrices = [

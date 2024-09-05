@@ -1,164 +1,188 @@
 
 // Import funcionts from Slides.js
-import { getElement, getElementAll, nextListing, prevListing, nextItems, prevItems, createDotsTestimonial, createDotsRecommendations } from './slides.js';
 import { buyBtnAssign } from './search.js';
-import { screenBreakpoints } from './breakpoints.js';
 
 // Wait for the DOM to fully load
 document.addEventListener("DOMContentLoaded", function () {
-    // Media queries for each breakpoint from breakpoints.js
-    const mediaQuries = {};
-    for (const [category, breakpoints] of Object.entries(screenBreakpoints)) {
-        mediaQuries[category] = breakpoints.map(query => window.matchMedia(query));
+
+    // Slide Function for Listing
+    let currentListingSlide = 0;
+    const dotsListing = document.querySelectorAll('.dot-listing');
+
+    function showListingSlide(index) {
+        const listingSlider = document.querySelector('.listing-container-inner');
+        const listingSlides = Array.from(listingSlider.children);
+        const totalListingSlides = listingSlides.length;
+        const listingSlidesToShow = 3;
+
+        if (index < 0) {
+            currentListingSlide = 0;
+        } else if (index > totalListingSlides - listingSlidesToShow) {
+            currentListingSlide = 0;
+        } else {
+            currentListingSlide = index;
+        }
+
+        const listingSlideWidth = function () {
+            if (window.innerWidth < 1280) {
+                return listingSlides[0].offsetWidth + 15;
+            } else {
+                return listingSlides[0].offsetWidth + 34;
+            }
+        };
+
+        listingSlider.style.transform = `translateX(-${currentListingSlide * listingSlideWidth()}px)`;
+
+        // Update dots
+        dotsListing.forEach(dot => dot.classList.remove('active'));
+        dotsListing[currentListingSlide].classList.add('active');
+    }
+
+    function nextListingSlide() {
+        showListingSlide(currentListingSlide + 1);
+    }
+
+    function prevListingSlide() {
+        showListingSlide(currentListingSlide - 1);
+    }
+
+
+    const leftListingSlide = document.querySelector('.left-reccommendation-slide');
+    const rightListingSlide = document.querySelector('.right-reccommendation-slide');
+
+    leftListingSlide.addEventListener('click', function () {
+        prevListingSlide();
+    })
+
+    rightListingSlide.addEventListener('click', function () {
+        nextListingSlide();
+    })
+
+    // Initialize the first dot as active
+    dotsListing[currentListingSlide].classList.add('active');
+
+    dotsListing.forEach(function (dotL) {
+        dotL.addEventListener('click', function () {
+            if (dotL.getAttribute('data-value') === '1') {
+                showListingSlide(0);
+            } else if (dotL.getAttribute('data-value') === '2') {
+                showListingSlide(1);
+            } else if (dotL.getAttribute('data-value') === '3') {
+                showListingSlide(2);
+            } else {
+                showListingSlide(3);
+            }
+        })
+    })
+
+
+
+    // Slide for Testimonails
+    let currentTestimonailSlide = 0;
+    const dotsTestimonail = document.querySelectorAll('.dot-testimonial');
+
+    function showTestimonailSlide(index) {
+        const testimonailSlider = document.querySelector('.testimonial-inner-container');
+        const testimonailSlides = Array.from(testimonailSlider.children);
+        const totalTestimonailSlides = testimonailSlides.length;
+        const testimonailSlidesToShow = 3;
+
+        if (index < 0) {
+            currentTestimonailSlide = 0;
+        } else if (index > totalTestimonailSlides - testimonailSlidesToShow) {
+            currentTestimonailSlide = 0;
+        } else {
+            currentTestimonailSlide = index;
+        }
+
+        const testimonailSlideWidth = function () {
+            if (window.innerWidth < 1280) {
+                return testimonailSlides[0].offsetWidth + 15;
+            } else {
+                return testimonailSlides[0].offsetWidth + 34;
+            }
+        };
+
+        // const testimonailSlideWidth = testimonailSlides[0].offsetWidth + 34; 
+        testimonailSlider.style.transform = `translateX(-${currentTestimonailSlide * testimonailSlideWidth()}px)`;
+
+        // Update dots
+        dotsTestimonail.forEach(dot => dot.classList.remove('active'));
+        dotsTestimonail[currentTestimonailSlide].classList.add('active');
+    }
+
+    function nextTestimonialSlide() {
+        showTestimonailSlide(currentTestimonailSlide + 1);
+    }
+
+    function prevTestimonailSlide() {
+        showTestimonailSlide(currentTestimonailSlide - 1);
+    }
+
+    const leftTestimonailSlide = document.querySelector('.left-testimonial-slide');
+    const rightTestimonailSlide = document.querySelector('.right-testimonial-slide');
+
+    leftTestimonailSlide.addEventListener('click', function () {
+        prevTestimonailSlide();
+    })
+
+    rightTestimonailSlide.addEventListener('click', function () {
+        nextTestimonialSlide();
+    })
+
+    // Initialize the first dot as active
+    dotsTestimonail[currentTestimonailSlide].classList.add('active');
+
+    dotsTestimonail.forEach(function (dotT) {
+        dotT.addEventListener('click', function () {
+            if (dotT.getAttribute('data-value') === '1') {
+                showTestimonailSlide(0);
+            } else if (dotT.getAttribute('data-value') === '2') {
+                showTestimonailSlide(1);
+            } else if (dotT.getAttribute('data-value') === '3') {
+                showTestimonailSlide(2);
+            } else {
+                showTestimonailSlide(3);
+            }
+        })
+    })
+
+
+    // Testimonial Slides Height Adjustment
+    window.onload = function () {
+        setEqualHeight();
     };
 
-    // Event listeners for next and previous buttons: Best Recommendations 1.0018 1.0035
-    const listings = getElementAll(".featured-listing-item-style");
-    const listingContainerWidth = getElement(".listing-container").offsetWidth;
-    getElement(".right-reccommendation-slide").addEventListener("click", function () {
-        if (mediaQuries.xl[0].matches) {
-            nextListing(listings, listingContainerWidth, 2, 3.17);
-        } else if (mediaQuries.lg[0].matches) {
-            nextListing(listings, listingContainerWidth, 2, 3.228);
-        } else if (mediaQuries.tablet[0].matches) {
-            nextListing(listings, listingContainerWidth, 1.5, 1.97);
-        } else if (mediaQuries.tablet[1].matches) {
-            nextListing(listings, listingContainerWidth, 1.5, 1.999);
-        } else if (mediaQuries.mobile[1].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1.0040);
-        } else if (mediaQuries.mobile[2].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1.0037);
-        } else if (mediaQuries.mobile[3].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1.0022);
-        } else if (mediaQuries.mobile[4].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1.003);
-        } else if (mediaQuries.mobile[5].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1);
-        } else if (mediaQuries.mobile[6].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1.0031);
-        } else if (mediaQuries.mobile[0].matches) {
-            nextListing(listings, listingContainerWidth, 1.4, 1.0018);
-        } else if (mediaQuries.medium[0].matches) {
-            nextListing(listings, listingContainerWidth, 2, 3.26);
-        } else if (mediaQuries.medium[1].matches) {
-            nextListing(listings, listingContainerWidth, 2, 3.268);
-        } else if (mediaQuries.medium[3].matches) {
-            nextListing(listings, listingContainerWidth, 2, 3.268);
-        } else {
-            nextListing(listings, listingContainerWidth, 2, 3.26);
-        };
-    });
+    window.onresize = function () {
+        setEqualHeight();
+    };
 
-    getElement(".left-reccommendation-slide").addEventListener("click", function () {
-        if (mediaQuries.xl[0].matches) {
-            prevListing(listings, listingContainerWidth, 3.17);
-        } else if (mediaQuries.lg[0].matches) {
-            prevListing(listings, listingContainerWidth, 3.23);
-        } else if (mediaQuries.tablet[0].matches) {
-            prevListing(listings, listingContainerWidth, 1.97);
-        } else if (mediaQuries.tablet[1].matches) {
-            prevListing(listings, listingContainerWidth, 2);
-        } else if (mediaQuries.mobile[1].matches) {
-            prevListing(listings, listingContainerWidth, 1.0040);
-        } else if (mediaQuries.mobile[2].matches) {
-            prevListing(listings, listingContainerWidth, 1.0037);
-        } else if (mediaQuries.mobile[3].matches) {
-            prevListing(listings, listingContainerWidth, 1.0022);
-        } else if (mediaQuries.mobile[4].matches) {
-            prevListing(listings, listingContainerWidth, 1.003);
-        } else if (mediaQuries.mobile[5].matches) {
-            prevListing(listings, listingContainerWidth, 1);
-        } else if (mediaQuries.mobile[6].matches) {
-            prevListing(listings, listingContainerWidth, 1.0031);
-        } else if (mediaQuries.mobile[0].matches) {
-            prevListing(listings, listingContainerWidth, 1.0018);
-        } else if (mediaQuries.medium[0].matches) {
-            prevListing(listings, listingContainerWidth, 3.26);
-        } else if (mediaQuries.medium[1].matches) {
-            prevListing(listings, listingContainerWidth, 3.268);
-        } else if (mediaQuries.medium[3].matches) {
-            prevListing(listings, listingContainerWidth, 3.268);
-        } else {
-            prevListing(listings, listingContainerWidth, 3.26);
-        };
+    function setEqualHeight() {
+        const testimonialsTextHeight = document.querySelectorAll('.testimonial-text-style');
+        let maxHeight = 0;
 
-    });
+        // Reset height to auto for all testimonials before calculating
+        testimonialsTextHeight.forEach(testimonial => {
+            testimonial.style.height = 'auto';
+        });
 
+        // Find the maximum height
+        testimonialsTextHeight.forEach(testimonial => {
+            const height = testimonial.offsetHeight;
+            if (height > maxHeight) {
+                maxHeight = height;
+            }
+        });
 
-    // Event listeners for next and previous buttons: Testimonials
-
-    const testimonials = getElementAll(".testimonial-item-style");
-    const containerWidth = getElement(".testimonial-container").offsetWidth;
-
-    getElement(".right-testimonial-slide").addEventListener("click", function () {
-        if (mediaQuries.xl[0].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.17);
-        } else if (mediaQuries.lg[0].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.23);
-        } else if (mediaQuries.tablet[0].matches) {
-            nextItems(testimonials, containerWidth, 1.5, 2.32);
-        } else if (mediaQuries.tablet[1].matches) {
-            nextItems(testimonials, containerWidth, 1.5, 2.317);
-        } else if (mediaQuries.mobile[0].matches) {
-            nextItems(testimonials, containerWidth, 1.4, 1.177);
-        } else if (mediaQuries.medium[3].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.27);
-        } else if (mediaQuries.medium[4].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.267);
-        } else if (mediaQuries.medium[0].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.3);
-        } else if (mediaQuries.medium[1].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.305);
-        } else if (mediaQuries.medium[2].matches) {
-            nextItems(testimonials, containerWidth, 2, 3.31);
-        } else {
-            nextItems(testimonials, containerWidth, 2, 3.297);
-        };
-    });
-    getElement(".left-testimonial-slide").addEventListener("click", function () {
-        if (mediaQuries.xl[0].matches) {
-            prevItems(testimonials, containerWidth, 3.17);
-        } else if (mediaQuries.lg[0].matches) {
-            prevItems(testimonials, containerWidth, 3.23);
-        } else if (mediaQuries.tablet[0].matches) {
-            prevItems(testimonials, containerWidth, 2.32);
-        } else if (mediaQuries.tablet[1].matches) {
-            prevItems(testimonials, containerWidth, 2.317);
-        } else if (mediaQuries.mobile[0].matches) {
-            prevItems(testimonials, containerWidth, 1.177);
-        } else if (mediaQuries.medium[3].matches) {
-            prevItems(testimonials, containerWidth, 3.27);
-        } else if (mediaQuries.medium[4].matches) {
-            prevItems(testimonials, containerWidth, 3.267);
-        } else if (mediaQuries.medium[0].matches) {
-            prevItems(testimonials, containerWidth, 3.3);
-        } else if (mediaQuries.medium[1].matches) {
-            prevItems(testimonials, containerWidth, 3.305);
-        } else if (mediaQuries.medium[2].matches) {
-            prevItems(testimonials, containerWidth, 3.31);
-        } else {
-            prevItems(testimonials, containerWidth, 3.297);
-        };
-    });
-
-    // Create dots for both slides
-    (function showDots() {
-        if (mediaQuries.mobile[0].matches) {
-            createDotsRecommendations(getElement('.reccommendations-dots'), getElementAll('.featured-listing-item-style').length / 1);
-            createDotsTestimonial(getElement('.testimonials-dots'), getElementAll('.testimonial-item-style').length / 1);
-        } else if (mediaQuries.tablet[0].matches || mediaQuries.tablet[1].matches) {
-            createDotsRecommendations(getElement('.reccommendations-dots'), getElementAll('.featured-listing-item-style').length / 1.2);
-            createDotsTestimonial(getElement('.testimonials-dots'), getElementAll('.testimonial-item-style').length / 1.2);
-        } else {
-            createDotsTestimonial(getElement('.testimonials-dots'), getElementAll('.testimonial-item-style').length / 1.5);
-            createDotsRecommendations(getElement('.reccommendations-dots'), getElementAll('.featured-listing-item-style').length / 1.5);
-        }
-    })();
+        // Set all testimonials to the maximum height
+        testimonialsTextHeight.forEach(testimonial => {
+            testimonial.style.height = maxHeight + 'px';
+        });
+    }
 
 
     // Initialize the search default price
     buyBtnAssign();
-
 
     // Email Validation
     const emailError = document.querySelector('.email-error');
