@@ -909,6 +909,11 @@ video {
   padding-bottom: 5rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .font-nunito {
   font-family: Nunito Sans, sans-serif;
 }
@@ -2849,6 +2854,10 @@ video {
 
   /* Testimonials style adjust */
 
+  /* .testimonial-container {
+
+    } */
+
   .testimonial-item-style {
     width: auto;
     padding: 1rem;
@@ -2888,23 +2897,6 @@ video {
     width: 70%;
     margin-inline: auto;
   }
-}
-
-@media (min-width:640px) and (max-width:767px) {
-  /* .user-name {
-        font-size: 0.8rem;
-        line-height: 1rem;
-        margin-bottom: 0.1rem;
-    }
-
-    .user-profession {
-        font-size: 0.75rem;
-        line-height: 0.9rem;
-    }
-
-    .user-img {
-        max-width: 18%;
-    } */
 }
 
 /* Below 5 Media Queries are for "Search Filter"*/

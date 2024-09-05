@@ -1717,6 +1717,10 @@
 
     /* Testimonials style adjust */
 
+    /* .testimonial-container {
+
+    } */
+
     .testimonial-item-style {
         @apply w-auto p-4;
         flex: 0 0 calc(50.59% - 10px);
@@ -1759,23 +1763,7 @@
 
 }
 
-@media (min-width:640px) and (max-width:767px) {
 
-    /* .user-name {
-        font-size: 0.8rem;
-        line-height: 1rem;
-        margin-bottom: 0.1rem;
-    }
-
-    .user-profession {
-        font-size: 0.75rem;
-        line-height: 0.9rem;
-    }
-
-    .user-img {
-        max-width: 18%;
-    } */
-}
 
 /* Below 5 Media Queries are for "Search Filter"*/
 
